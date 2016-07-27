@@ -1,7 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[System.Serializable]
+public class Boundary       //声明Boundary类，用于管理飞船活动的边界值
+{
+    public float xMin = -6.0f,
+                 xMax = 6.0f,
+                 zMin = -4.0f,
+                 zMax = 14.0f;
+}
+
 public class PlayerController : MonoBehaviour {
+
+    public Boundary boundary;       //添加Boundary类的实例
 
     public float speed = 5.0f;      //添加速度控制变量，并将初始值设为5.0f
 
@@ -21,6 +32,16 @@ public class PlayerController : MonoBehaviour {
         float moveVertical = Input.GetAxis("Vertical");         //得到垂直方向输入
         //用上面的水平方向(X轴)和垂直方向(Z轴)输入创建一个Vector3变量，作为刚体速度
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        GetComponent<Rigidbody>().velocity = movement * speed;
+
+        //GetComponent<Rigidbody>().velocity = movement * speed;
+
+        Rigidbody rb = GetComponent<Rigidbody>();
+        if(rb != null)
+        {
+            rb.velocity = movement * speed;
+            rb.position = new Vector3(
+                Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax), 0.0f, Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
+                );
+        }
     }
 }
