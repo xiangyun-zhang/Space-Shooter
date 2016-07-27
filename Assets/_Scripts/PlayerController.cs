@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
 
     public float speed = 5.0f;      //添加速度控制变量，并将初始值设为5.0f
 
+    public float tilt = 10.0f;       //添加倾斜系数
+
 	// Use this for initialization
 	void Start () {
 	
@@ -43,5 +45,7 @@ public class PlayerController : MonoBehaviour {
                 Mathf.Clamp(rb.position.x, boundary.xMin, boundary.xMax), 0.0f, Mathf.Clamp(rb.position.z, boundary.zMin, boundary.zMax)
                 );
         }
+
+        rb.rotation = Quaternion.Euler(0.0f, 0.0f, rb.velocity.x * -tilt);
     }
 }
