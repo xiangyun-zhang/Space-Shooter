@@ -2,16 +2,17 @@ Mono path[0] = 'E:/Unity/Space Shooter/spaceshooter_Data/Managed'
 Mono path[1] = 'E:/Unity/Space Shooter/spaceshooter_Data/Mono'
 Mono config path = 'E:/Unity/Space Shooter/spaceshooter_Data/Mono/etc'
 PlayerConnection initialized from E:/Unity/Space Shooter/spaceshooter_Data (debug = 0)
-PlayerConnection initialized network socket : 0.0.0.0 55250
-Multi-casting "[IP] 192.168.0.109 [Port] 55250 [Flags] 2 [Guid] 470058777 [EditorId] 1141696451 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-T39VJN9) [Debug] 0" to [225.0.0.222:54997]...
-PlayerConnection already initialized - listening to [192.168.0.109:55250]
+PlayerConnection initialized network socket : 0.0.0.0 55095
+Multi-casting "[IP] 192.168.0.104 [Port] 55095 [Flags] 2 [Guid] 1699939584 [EditorId] 2831682674 [Version] 1048832 [Id] WindowsPlayer(DESKTOP-T39VJN9) [Debug] 0" to [225.0.0.222:54997]...
+PlayerConnection already initialized - listening to [192.168.0.104:55095]
 Initialize engine version: 5.3.5f1 (960ebf59018a)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 10.1]
-    Renderer: Intel(R) HD Graphics (ID=0x102)
-    Vendor:   Intel
-    VRAM:     848 MB
+    Version:  Direct3D 9.0c [nvd3dum.dll 10.18.13.6881]
+    Renderer: NVIDIA GeForce GTX 750 Ti
+    Vendor:   NVIDIA
+    VRAM:     993 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 NULL=1 RESZ=0 SlowINTZ=0
 Begin MonoManager ReloadAssembly
 Platform assembly: E:\Unity\Space Shooter\spaceshooter_Data\Managed\UnityEngine.dll (this message is harmless)
 Loading E:\Unity\Space Shooter\spaceshooter_Data\Managed\UnityEngine.dll into Unity Child Domain
@@ -21,27 +22,9 @@ Platform assembly: E:\Unity\Space Shooter\spaceshooter_Data\Managed\UnityEngine.
 Loading E:\Unity\Space Shooter\spaceshooter_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: E:\Unity\Space Shooter\spaceshooter_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading E:\Unity\Space Shooter\spaceshooter_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: E:\Unity\Space Shooter\spaceshooter_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
-Loading E:\Unity\Space Shooter\spaceshooter_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-Platform assembly: E:\Unity\Space Shooter\spaceshooter_Data\Managed\UnityEngine.UI.dll (this message is harmless)
-Loading E:\Unity\Space Shooter\spaceshooter_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.137 seconds
+- Completed reload, in  0.088 seconds
 Platform assembly: E:\Unity\Space Shooter\spaceshooter_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: E:\Unity\Space Shooter\spaceshooter_Data\Managed\System.dll (this message is harmless)
-WARNING: Shader Unsupported: 'Hidden/Internal-DeferredShading' - Pass '' has no vertex shader
-WARNING: Shader Unsupported: 'Hidden/Internal-DeferredShading' - Setting to default shader.
-WARNING: Shader Unsupported: 'Hidden/Internal-DeferredReflections' - Pass '' has no vertex shader
-WARNING: Shader Unsupported: 'Hidden/Internal-DeferredReflections' - Setting to default shader.
-WARNING: Shader Unsupported: 'Hidden/Internal-PrePassLighting' - Pass '' has no vertex shader
-WARNING: Shader Unsupported: 'Hidden/Internal-PrePassLighting' - Setting to default shader.
-WARNING: Shader Unsupported: 'Legacy Shaders/VertexLit' - Pass '' has no vertex shader
-WARNING: Shader Unsupported: 'Legacy Shaders/VertexLit' - Setting to default shader.
-WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - Pass 'FORWARD' has no vertex shader
-WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - Pass 'FORWARD' has no vertex shader
-WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - Pass 'PREPASS' has no vertex shader
-WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - Pass 'PREPASS' has no vertex shader
-WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - Pass 'DEFERRED' has no vertex shader
-WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - All passes removed
 desktop: 1600x900 60Hz; virtual: 1600x900 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
