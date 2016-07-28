@@ -10,6 +10,7 @@ public class Boundary       //声明Boundary类，用于管理飞船活动的边
                  zMax = 14.0f;
 }
 
+
 public class PlayerController : MonoBehaviour {
 
     public Boundary boundary;       //添加Boundary类的实例
@@ -18,14 +19,24 @@ public class PlayerController : MonoBehaviour {
 
     public float tilt = 10.0f;       //添加倾斜系数
 
-	// Use this for initialization
-	void Start () {
+    public float fireRate = 0.5f;   //发射间隔时间，默认0.5秒
+    public GameObject shot;         //shot表示Bolt预制体
+    public Transform shotSpawn;
+    private float nextFire = 0.0f;
+
+    // Use this for initialization
+    void Start () {
 	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+	    if(Input.GetButton("Fire1")&&Time.time > nextFire)
+        {
+            nextFire = Time.time + fireRate;
+            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+        }
+
 	}
 
     void FixedUpdate()
