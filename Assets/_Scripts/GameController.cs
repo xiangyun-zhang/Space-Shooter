@@ -5,6 +5,9 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+    public Text restartText;
+    private bool restart;
+
     public Text gameOverText;   //更新Text组件显示
     private bool gameOver;      //用于表示游戏是否结束
     public void GameOver()
@@ -40,7 +43,12 @@ public class GameController : MonoBehaviour {
         while (true)
         {
             if (gameOver)
+            {
+                restartText.text = "按【R】键重新开始";
+                restart = true;
                 break;
+            }
+                
             for (int i = 0; i < hazardCount; ++i)
             {
                 spawnPosition.x = Random.Range(-spawnValues.x, spawnValues.x);      //这一行表示在X轴的极大值和极小值间随机生成一个x值
@@ -60,10 +68,16 @@ public class GameController : MonoBehaviour {
         StartCoroutine(SpawnWaves());
         gameOverText.text = "";
         gameOver = false;
+        restartText.text = "";
+        restart = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        if(restart)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+                Application.LoadLevel(Application.loadedLevel);
+        }	
 	}
 }
