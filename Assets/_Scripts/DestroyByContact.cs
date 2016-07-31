@@ -35,7 +35,10 @@ public class DestroyByContact : MonoBehaviour {
 
         Instantiate(explosion, transform.position, transform.rotation);                         //实例化explosion的位置为小行星的位置
         if (other.tag == "Player")
+        {
             Instantiate(playerExplosion, other.transform.position, other.transform.rotation);   //playerExplos的位置为飞船位置
+            gameController.GameOver();
+        }
 
         gameController.AddScore(scoreValue);    //分值更新
     }

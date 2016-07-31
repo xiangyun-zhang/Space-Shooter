@@ -5,6 +5,14 @@ using System.Collections;
 
 public class GameController : MonoBehaviour {
 
+    public Text gameOverText;   //更新Text组件显示
+    private bool gameOver;      //用于表示游戏是否结束
+    public void GameOver()
+    {
+        gameOver = true;
+        gameOverText.text = "游戏结束";
+    }
+
     public Text scoreText;         //用于更新计分Text组件
     private int score;                      //用于保存当前分值
     public void AddScore(int newScoreValue)     //更新分值
@@ -31,6 +39,8 @@ public class GameController : MonoBehaviour {
         yield return new WaitForSeconds(startWarit);
         while (true)
         {
+            if (gameOver)
+                break;
             for (int i = 0; i < hazardCount; ++i)
             {
                 spawnPosition.x = Random.Range(-spawnValues.x, spawnValues.x);      //这一行表示在X轴的极大值和极小值间随机生成一个x值
@@ -48,6 +58,8 @@ public class GameController : MonoBehaviour {
         score = 0;
         UpdateScore();
         StartCoroutine(SpawnWaves());
+        gameOverText.text = "";
+        gameOver = false;
 	}
 	
 	// Update is called once per frame
