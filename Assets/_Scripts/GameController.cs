@@ -1,7 +1,21 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
+
 public class GameController : MonoBehaviour {
+
+    public Text scoreText;         //用于更新计分Text组件
+    private int score;                      //用于保存当前分值
+    public void AddScore(int newScoreValue)     //更新分值
+    {
+        score += newScoreValue;
+        UpdateScore();
+    }
+    void UpdateScore()      //更新Text组件
+    {
+        scoreText.text = "得分：" + score;
+    }
 
     public int hazardCount;     //用来表示障碍物（小行星）的数量
     public float startWarit = 1.0f; //小行星对象生成前的等待时间；
@@ -31,6 +45,8 @@ public class GameController : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        score = 0;
+        UpdateScore();
         StartCoroutine(SpawnWaves());
 	}
 	
